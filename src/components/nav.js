@@ -12,8 +12,8 @@ export default function Nav() {
             </a>
             {/* <!-- Nav Links --> */}
             <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-              <li><a class="hover:text-blue-800" href="#">Home</a></li>
-              <li><a class="hover:text-blue-800" href="#">Programmes</a></li>
+              <li><a class="hover:text-blue-800" href="/">Home</a></li>
+              <li><a class="hover:text-blue-800" href="pricing">Pricing</a></li>
               <li><a class="hover:text-blue-800" href="#">Membership</a></li>
               <li><a class="hover:text-blue-800" href="#">About Us</a></li>
               <li><a class="hover:text-blue-800" href="#">Contact Us</a></li>
