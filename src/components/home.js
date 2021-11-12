@@ -6,11 +6,12 @@ import CardSwiper from './cardswiper'
 import Deliver from './deliverym'
 import Experience from './experience'
 import Footer from './footer'
+import Hero from './hero'
 export default function Home() {
     return (
         <div className="bg-gray-50 flex-row">
-
-          
+<Hero />
+{/*           
             <section className="bg-gray-900   w-full h-screen p-0 ">
 
 
@@ -40,14 +41,14 @@ export default function Home() {
             </div>
           </div>
          <div className="md:hidden">
-         <p className="font-poppins-thin text-center text-blue-800 text-4xl py-8">Prime Education</p>
+         <p className="font-open-bold text-center text-blue-800 text-4xl py-8">Prime Education</p>
             <p className="font-open-regular px-4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is</p>
             <div className="space-y-8 mt-4 px-4">
             <Button text="LEARN MORE" background="transparent" />
             <Button text="EXPLORE PROGRAMS" background="gradient" />
             </div>
          </div>
-            </section>
+            </section> */}
             <p className="font-poppins-light text-2xl m-4 md:ml-20 md:mt-10 md:text-4xl">Why Primecs?</p>
             <section className="px-4 py-4 mt-4 md:grid md:grid-cols-3 md:space-x-4 md:px-20">
 

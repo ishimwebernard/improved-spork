@@ -11,293 +11,142 @@ import Online from '../assets/online.png'
 import Demand from '../assets/demand.png'
 import Custom from '../assets/custom.png'
 import Footer from './footer'
-
+import Hero from './hero'
+import CardWithImage from './cardwithimage'
+import Verticalcardnoimage from './verticalcardnoimage'
 
 export default function HomeRefurbished() {
     return (
         <div>
 
-<Nav />
-            {/* Fore Stuff DESKTOP*/}
-            <div className="w-full h-screen bg-gray-50 space-x-4  grid grid-cols-2 justify-center px-20  overflow-hidden">
-                
-                <div className="m-auto">
-                    <p className="font-montserrat leading-snug text-6xl">Prime Education is here!</p>
-                    <div className="mt-10"></div>
-                    <p className="font-open-regular text-xl">
-                    We help you unleash the necessary skillset vital for a problem solver, via real life practices of analysis and design of some of the complex structures in the industry.
-                    </p>
-                    <div className="mt-10"></div>
-                    <div className=" mx-auto w-full justify-center space-x-4 grid grid-cols-2">
-                        <Button text="LEARN MORE"/>
-                        <Button text="EXPLORE COURSES"/>
-                    </div>
-                </div>
-                <img src={Silhouette} alt="construction" className="py-auto m-auto w-full" />
+
+<Hero />
+
+<div class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+      <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Why PrimECS?</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        A better way to get education online
+      </p>
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+        Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
+      </p>
+    </div>
+
+    <div class="mt-10">
+      <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+              {/* <!-- Heroicon name: outline/globe-alt --> */}
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
             </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Competitive exchange rates</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
 
-
-
-
-
-
-
-            {/* Reasons Desktop */}
-            <div className="w-full h-screen px-20 ">
-            <div className="mt-10"></div>
-                    <p className="font-open-bold leading-snug text-6xl">Why Primecs?</p>
-         <div className="flex h-full space-x-10">
-                        <section className="mt-10 justify-center bg-white h-1/2 border border-gray-200 rounded-xl p-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 m-auto opacity-70" fill="none" viewBox="0 0 24 24" stroke="#1E40AF">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-</svg>
-<div className="mt-5"></div>
-<p className="justify-center font-open-bold text-blue-800 text-center text-2xl">Affordability</p>
-<div className="mt-5"></div>
-<p>
-With us, your time bound and geographical  restrictions are no longer a limit! Our learning services are cheap and affordable regardless of where you are in the world. 
-</p>
-                        </section>
-                        <section className="mt-10 justify-center bg-white h-1/2 border border-gray-200 rounded-xl p-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" className=" m-auto opacity-70h-12 w-12 opacity-70" fill="none" viewBox="0 0 24 24" stroke="#1E40AF">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
-</svg>
-<div className="mt-5"></div>
-<p className="justify-center font-open-bold text-blue-800 text-center text-2xl">Proffessionalism</p>
-<div className="mt-5"></div>
-<p>
-It’s always amazing to learn with Experts! PrimECS got your back thanks to various professional individuals with superb field and office experiences in the industry.</p>
-                        </section>
-                        <section className="mt-10 justify-center bg-white h-1/2 border border-gray-200 rounded-xl p-10">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 opacity-70 m-auto" fill="none" viewBox="0 0 24 24" stroke="#1E40AF">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-</svg>
-<div className="mt-5"></div>
-<p className="justify-center font-open-bold text-blue-800 text-center text-2xl">Foresight</p>
-<div className="mt-5"></div>
-<p>
-With us, you’re able to reflect on a long-term basis, dig deep in the sea of ideas, and hence get to plan actively and accurately.</p>
-                        </section>
-                     
-         </div>
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+              {/* <!-- Heroicon name: outline/scale --> */}
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+              </svg>
             </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">No hidden fees</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
 
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+              {/* <!-- Heroicon name: outline/lightning-bolt --> */}
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Transfers are instant</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
 
+        <div class="relative">
+          <dt>
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+              {/* <!-- Heroicon name: outline/annotation --> */}
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+              </svg>
+            </div>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Mobile notifications</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</div>
 
             {/* Explore Programs */}
 
             <section className="bg-white px-20">
             <div className="py-10"></div>
 
-            <p className="font-open-bold leading-snug text-6xl">Programs by Discipline</p>
+            <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Why PrimECS?</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Explore Programs By Discipline
+      </p>
             <div className="mt-10"></div>
-           <div  className="flex space-x-4">
+           <div  className="flex space-x-2">
+<CardWithImage title="Architecture" image={Architecture} content="Artistry, design and Drawings"/>
+<CardWithImage title="Engineering" image={Engineering} content="Technical Analysis and Design"/>
+<CardWithImage title="Construction" image={Construction} content="Planning, Execution and Monitoring" />
+ <CardWithImage title="Leadership" image={Leadership} content="Influencing the outcome" />
 
-<div class="bg-white shadow-md border border-gray-200 rounded-lg h-full">
-    
-    <img class="rounded-t-lg" src={Architecture} alt="" />
-
-<div class="p-5   h-full">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Architecture</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular h-full">Artistry, design & drawings</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm ">
-    
-    <img class="rounded-t-lg" src={Engineering} alt="" />
-
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Engineering</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Technical Analysis & Design.</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
-           <div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm ">
-    
-            <img class="rounded-t-lg" src={Construction} alt="" />
-      
-        <div class="p-5">
-          
-                <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Construction</h5>
-        
-            <p class="font-normal text-gray-700 mb-3 font-open-regular">Planning, Execution & Monitoring. </p>
-            <Button text="LEARN MORE" />
-        </div>
-    </div>
-
-    <div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-    
-    <img class="rounded-t-lg" src={Leadership} alt="" />
-
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Leadership</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Influencing the outcome
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
       </div>
       <div className="py-10"></div>
 
-<p className="font-open-bold leading-snug text-6xl">Programs by Delivery Mode</p>
+      <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Why PrimECS?</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Explore Programs by delivery mode
+      </p>
 <div className="mt-10"></div>
 <div  className="flex space-x-4">
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-    
-    <img class="rounded-t-lg" src={OnSite} alt="" />
+    <CardWithImage image={OnSite} title="Live On Site" content="In person attendace events" />
+<CardWithImage image={Online} title="Live Online" content="Courses by Video Confrence" />
+<CardWithImage image={Demand} title="On-Demand" content="Access to recorded courses" />
+<CardWithImage image={Custom} title="Custom" content="Custom, one-on-one and hybrid" />
 
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Live On Site</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">In person attendance events
-
-
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-    
-    <img class="rounded-t-lg" src={Online} alt="" />
-
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Live Online</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Courses by Video conference
-
-
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-    
-    <img class="rounded-t-lg" src={Demand} alt="" />
-
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">On-Demand</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Access to recorded courses
-
-
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-    
-    <img class="rounded-t-lg" src={Custom} alt="" />
-
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">Custom</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Custom, one-on-one and hybrid
-
-
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
 </div>
 
 <div className="pb-20">
 <div className="py-10"></div>
 
-<p className="font-open-bold leading-snug text-6xl">Programs by Delivery Mode</p>
+
+<h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">Why PrimECS?</h2>
+      <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        Explore Programs by Experience Level
+      </p>
 <div className="mt-10"></div>
 <div className="grid grid-cols-4 space-x-4">
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">  
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">AEC360 Pro
-</h5>
+    <Verticalcardnoimage title="AEC360 Pro" content="Students and Entry Professionals" />
+<Verticalcardnoimage title="AEC360 Exec" content="Senior Managers and Executives" />
+<Verticalcardnoimage title="AEC360 Custom" content="Mid Level Managers and Rising Stars"/>
+<Verticalcardnoimage title="AEC360 Custom" content="Custom Corporate and individual Programs" />
 
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Students & Entry Professionals
-
-
-
-
-
-</p>
-    <div className="mt-10">
-    <Button text="LEARN MORE" />
-    </div>
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">  
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">AEC360 Exec
-</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Senior Managers & Executives
-
-
-
-
-
-
-
-</p>
-    <div className="mt-10">
-    <Button text="LEARN MORE" />
-    </div>
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">  
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">AEC360 Custom
-</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Mid Level Managers & Rising Stars
-
-
-
-
-
-
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
-<div class="h-full bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">  
-<div class="p-5">
-  
-        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2 font-open-bold">AEC360 Custom
-
-</h5>
-
-    <p class="font-normal text-gray-700 mb-3 font-open-regular">Custom Corporate and individual Programs
-
-
-
-
-
-
-
-</p>
-    <Button text="LEARN MORE" />
-</div>
-</div>
 </div>
 
 
