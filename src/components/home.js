@@ -9,46 +9,9 @@ import Footer from './footer'
 import Hero from './hero'
 export default function Home() {
     return (
-        <div className="bg-gray-50 flex-row">
-<Hero />
-{/*           
-            <section className="bg-gray-900   w-full h-screen p-0 ">
-
-
-            <img src={Silhouette} className="w-full h-full object-cover " />
-
-          <div className="absolute top-0 w-full h-full flex flex-col ">
-            <Nav />
-            <div className="relative">
-            <div className="absolute right-0 top-0 grid grid-cols-2 items-center justify-center w-full ">
-               <div></div>
-               <div className="">
-             <div className="bg-gray-50 py-20 px-10 m-4 rounded-xl bg-opacity-95">
-             <p className="font-poppins-thin text-4xl text-blue-800">PrimECS Education</p>
-                <p className="font-open-regular text-sm w-3/4 tracking-tight mt-6 ">
-                We help you unleash the necessary skillset vital for a problem solver, via real life practices of analysis and design of some of the complex structures in the industry.
-                </p>
-              <div className="w-3/4 mt-4">
-              <div className="">
-              <Button text="LEARN MORE" background="transparent" />
-              </div>
-              <div className="h-4"></div>
-            <Button text="EXPLORE PROGRAMS" background="gradient" />
-              </div>
-             </div>
-               </div>
-            </div>
-            </div>
-          </div>
-         <div className="md:hidden">
-         <p className="font-open-bold text-center text-blue-800 text-4xl py-8">Prime Education</p>
-            <p className="font-open-regular px-4">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is</p>
-            <div className="space-y-8 mt-4 px-4">
-            <Button text="LEARN MORE" background="transparent" />
-            <Button text="EXPLORE PROGRAMS" background="gradient" />
-            </div>
-         </div>
-            </section> */}
+        <div className="bg-gray-50 flex-row relative">
+           
+            <Hero />
             <p className="font-poppins-light text-2xl m-4 md:ml-20 md:mt-10 md:text-4xl">Why Primecs?</p>
             <section className="px-4 py-4 mt-4 md:grid md:grid-cols-3 md:space-x-4 md:px-20">
 

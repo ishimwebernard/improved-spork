@@ -4,6 +4,7 @@ import HomeRefurbished from './homerefurbished'
 import Pricing from './pricing'
 import MemberShip from './membership'
 import AboutUs from './aboutus'
+import Contact from './contact'
 import { Switch, Route} from 'react-router-dom'
 
 export default function Main() {
@@ -14,6 +15,7 @@ export default function Main() {
          <Route path="/pricing" exact component={Pricing}/>
          <Route path="/membership"exact component={MemberShip} />
          <Route path="/about" exact component={AboutUs} />
+         <Route path="/contact" exact component={Contact} />
          </Switch>
             
         </div>
