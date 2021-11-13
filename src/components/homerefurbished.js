@@ -52,39 +52,39 @@ export default function HomeRefurbished() {
 
         <div class="relative">
           <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-default text-white">
               {/* <!-- Heroicon name: outline/scale --> */}
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#fff">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
             </div>
-            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">No hidden fees</p>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Proffessionalism</p>
           </dt>
           <dd class="mt-2 ml-16 text-base text-gray-500">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-          </dd>
+          It’s always amazing to learn with Experts! PrimECS got your back thanks to various professional individuals with superb field and office experiences in the industry.          </dd>
         </div>
 
         <div class="relative">
           <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-default text-white">
               {/* <!-- Heroicon name: outline/lightning-bolt --> */}
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#fff">
+  <path d="M12 14l9-5-9-5-9 5 9 5z" />
+  <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+</svg>
             </div>
-            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Transfers are instant</p>
+            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">Foresight</p>
           </dt>
           <dd class="mt-2 ml-16 text-base text-gray-500">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-          </dd>
+          With us, you’re able to reflect on a long-term basis, dig deep in the sea of ideas, and hence get to plan actively and accurately.          </dd>
         </div>
 
         <div class="relative">
           <dt>
-            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+            <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-green-default text-white">
               {/* <!-- Heroicon name: outline/annotation --> */}
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#fff" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
               </svg>
             </div>

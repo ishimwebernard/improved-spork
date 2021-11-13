@@ -3,9 +3,8 @@ import React from 'react'
 export default function Button({text, background}) {
     return (
        <div className="cursor-pointer hover:opacity-90">
-            <div className={(background === "transparent") ? "font-open-regular rounded-full py-3 px-6 text-center w-full border border-gray-900" : (background === "gradient") ? "font-open-regular rounded-full py-3 px-6 text-center w-full green-bluegrad":"font-open-regular rounded-full py-3 px-6 text-center w-full bg-blue-800 text-gray-50"}>
-            {text}
-        </div>
+                  <button type="button" class="text-white w-full bg-blue-default hover:bg-blue-dark focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">{text}</button>
+
        </div>
     )
 }
