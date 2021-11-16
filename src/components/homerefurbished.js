@@ -29,9 +29,7 @@ export default function HomeRefurbished() {
       <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         A better way to get education online
       </p>
-      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-        Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
-      </p>
+      
     </div>
 
     <div class="mt-10">
@@ -143,7 +141,7 @@ export default function HomeRefurbished() {
 <div className="grid grid-cols-4 space-x-4">
     <Verticalcardnoimage title="AEC360 Pro" content="Students and Entry Professionals" />
 <Verticalcardnoimage title="AEC360 Exec" content="Senior Managers and Executives" />
-<Verticalcardnoimage title="AEC360 Custom" content="Mid Level Managers and Rising Stars"/>
+<Verticalcardnoimage title="AEC360 Export" content="Mid Level Managers and Rising Stars"/>
 <Verticalcardnoimage title="AEC360 Custom" content="Custom Corporate and individual Programs" />
 
 </div>
