@@ -33,12 +33,13 @@ export default function Nav() {
 
 <a href="/about" class="font-medium text-gray-500 hover:text-gray-900">About Us</a>
 
-<a href="/contact" class="font-medium text-gray-500 hover:text-indigo-500">Contact Us</a>
+<a href="/contact" class="font-medium text-gray-500 hover:text-indigo-500">Contact Us</a> 
 
     </ul>
   </div>
   </div>
 </nav>
+
 
 
 

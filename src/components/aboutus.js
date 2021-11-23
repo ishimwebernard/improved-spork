@@ -8,11 +8,11 @@ export default function AboutUs() {
             <Nav />
             <div className="grid grid-cols-3 px-20 space-x-4 py-10">
                 <div>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                <p class="deep-text mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
         Our team
       </p>
       <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-        Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
+Our team consists of field and office professionals ready to guide you along the way! From design illustrations and project management domains, as well as other different areas in the industry, our team ressourcefully awakens your motives.
       </p>
                 </div>
                 <div className="col-span-2 grid grid-cols-2">

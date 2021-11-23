@@ -18,7 +18,7 @@ export default (props) => {
       <div className="keen-slider__slide number-slide1  ">
         <img src={Architecture} className="w-full" />
         <p className="mt-4 ml-4 font-open-semibold text-xl">Architecture</p>
-        <p className="text-gray-600 ml-4">Artistry, design and drawings</p>
+        <p className="text-gray-600 ml-4">artistry, design and drawings</p>
         <div className="py-4 p-2">
         <Button text="FIND OUT MORE" />
         </div>

@@ -46,7 +46,7 @@ export default function Pricing() {
             <div className=" h-3/4 px-20 justify-center elements-center w-full relative hero-pricing">
                 <div className="h-1/3"></div>
                    <div className="  w-full">
-                   <p className="text-center font-bold text-6xl tracking-tight text-blue-default">Buy Once, Learn <span className="text-green-default">Everywhere</span></p>
+                   <p className="deep-text text-center font-bold text-6xl tracking-tight text-blue-default">Buy Once, Learn <span className="deep-text text-green-default">Everywhere</span></p>
                    <div className="mt-10"></div>
                    <p className="m-auto text-center text-lg tracking-normal text-white">Get Unlimited access to courses at a low price and very customisable</p>
                    </div>

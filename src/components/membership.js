@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { gsap } from "gsap";
 import Nav from './nav';
-
+import Applc from './applc';
 
 const InputText = ({label, placeholder}) => {
     return (
@@ -47,7 +47,8 @@ function Back() {
     return (
        <div className="w-screen h-screen ">
            <Nav />
-            <div className="w-full h-3/4 flex px-20">
+           <Applc />
+            {/* <div className="w-full h-3/4 flex px-20">
             
             <div className="w-1/2 justify-center ">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-1/3 w-max m-auto" fill="none" viewBox="0 0 24 24" stroke="#9CA3AF">
@@ -55,7 +56,7 @@ function Back() {
 </svg>
 <div className="mt-10"></div>
 
-<p className="font-open-bold text-center w-full text-3xl leading-tight text-blue-800">Applicant's Information</p>
+<p className="deep-text font-open-bold text-center w-full text-3xl leading-tight text-blue-800">Applicant's Information</p>
 <div className="mt-5"></div>
 <p className="font-open-regular text-gray-500 text-sm">
 As we live by learning, In order to be a member of the program, please fill up the application form below. The outcomes will be notified to you upon the evaluation! We would appreciate to have you as part of the knot!
@@ -225,7 +226,7 @@ As we live by learning, In order to be a member of the program, please fill up t
 
             </div>
            
-        </div>
+        </div> */}
        </div>
     )
 }
