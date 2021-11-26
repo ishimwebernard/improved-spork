@@ -7,7 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Button from './button';
 import Toggle from './Toggle';
 
-export default function Applc() {
+
+export default function Availability() {
 
   const TextWithLabel = ({labelText}) => {
     return (
@@ -102,7 +103,7 @@ export default function Applc() {
 <div className="md:col-span-1 h-full relative overflow-y-hidden">
 <Pagination elements={[
   {
-    route: "",
+    route: "/membership",
     caption: "Applicant's Information"
   },
   {
@@ -128,73 +129,20 @@ export default function Applc() {
 ]} />
 </div>
 
-<div className="h-4/5 w-full overflow-y-scroll col-span-2">
+<div className="h-full w-full overflow-y-scroll col-span-2">
 <div class="mt-10 sm:mt-0">
     <div class="mt-0">
       <form action="#" method="POST">
-        <div class="shadow overflow-hidden sm:rounded-md">
-          <div class="px-4 py-5 bg-white sm:p-6">
-            <div class="grid grid-cols-6 gap-6">
-              <div class="col-span-6 sm:col-span-3">
-                <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
-                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-
-              <div class="col-span-6 sm:col-span-3">
-                <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-
-              <div class="col-span-6 sm:col-span-4">
-                <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-
-              <div class="col-span-6 sm:col-span-3">
-                <label for="country" class="block text-sm font-medium text-gray-700">Country</label>
-                <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
-                </select>
-              </div>
-              <div className="">
-                <p>Date of Birth</p>
-              <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-
-              </div>
-
-              <div class="col-span-6">
-                <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
-                <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-
-              <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-
-              <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
-                <input type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-
-              <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                <label for="postal-code" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
-              </div>
-              <div className="w-full col-span-6">
-              <p className="text-base font-medium text-gray-900">Areas Of Interest</p>
-              <div className="grid grid-cols-3 space-x-3 mt-4">
-              <CheckOnlyCaption caption="Architecture" /> 
-              <CheckOnlyCaption caption="Engineering" /> 
-              <CheckOnlyCaption caption="Construction" /> 
-              </div>
-           
-              </div>
-
-            </div>
-          </div>
+        <div class="shadow overflow-hidden sm:rounded-md p-8">
+        <div className="flex space-x-4">
+        <div className="w-1/2">
+        <TextWithLabel labelText="Available From" />
+        </div>
+        <div className="w-1/2">
+        <TextWithLabel labelText="Available To" />
+        </div>
+        </div>
+        <div className="h-20"></div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
               <Button text="Save" />

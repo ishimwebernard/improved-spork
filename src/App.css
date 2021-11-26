@@ -19,4 +19,7 @@
     font-weight: 900; 
     font-family: 'Arial Black';
 }
+.blue-gradient {
+    background: linear-gradient(45deg, #3B82F6, #1E40AF)
+}
 
