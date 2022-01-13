@@ -4,28 +4,28 @@ import {useState } from 'react'
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/FadeLoader";
 
-const override = css`
+const overridethree = css`
   display: block;
   margin: 0 auto;
   border-color: "#94a3b8";
 `;
 
-export default function FileUploadTool({caption}) {
-  let [loading, setLoading] = useState(false)
+export default function Ftthree() {
+  let [loadingthree, setloadingthree] = useState(false)
   let [color, setColor] = useState("#94a3b8");
-  function changeLoading(){
-    setLoading(!loading)
+  function changeloadingthree(){
+    setloadingthree(!loadingthree)
   }
-  const [fileUploaded, setFileUploaded] = useState(null)
-    return (
+  const [fileUploadedthree, setfileUploadedthree] = useState(null)
+    return ( 
         <div>
             <div>
-                    <label className="block text-sm font-medium text-gray-700">{caption}</label>
+                    <label className="block text-sm font-medium text-gray-700">Application Letter</label>
                     <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                       <div className="space-y-1 text-center">
                         
-                          {loading ? (
-                                 <ClipLoader color={color} loading={loading} css={override} size={150} />
+                          {loadingthree ? (
+                                 <ClipLoader color={color} loadingthree={loadingthree} css={overridethree} size={150} />
 
                           ):(<svg
                           className="mx-auto h-12 w-12 text-gray-400"
@@ -48,20 +48,20 @@ export default function FileUploadTool({caption}) {
                             className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                           >
                             
-                            <input id="file-upload" name="file-upload" type="file"  onChange={async(e)=>{
+                            <input id="threefileupload" name="threefileupload" type="file"  onChange={async(e)=>{
                               
-                              changeLoading()
+                              changeloadingthree()
                               const fileToolUploadResponse = await FileTool.upload(e.target.files[0])
-                           
+                              
                               if(fileToolUploadResponse !== "Something went wrong"){
-                                changeLoading()
-                                setLoading(false)
-                                setFileUploaded(fileToolUploadResponse.name)
+                                changeloadingthree()
+                                setloadingthree(false)
+                                setfileUploadedthree(fileToolUploadResponse.name)
                               }
                               
                             }} />
                           </label>
-                        
+                       
                         </div>
                       </div>
                     </div>

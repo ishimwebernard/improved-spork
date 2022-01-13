@@ -23,6 +23,7 @@ export default function AdNav() {
             <div className="mt-5"></div>
              <NavElement caption="Home" route="/admindashboard" />
                 <NavElement caption="Applications" route="/admindashboard/applications" />
+                <NavElement caption="Create Schedules" route="/admindashboard/schedules" />
         </div>
     )
 }

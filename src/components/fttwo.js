@@ -10,7 +10,7 @@ const override = css`
   border-color: "#94a3b8";
 `;
 
-export default function FileUploadTool({caption}) {
+export default function Fttwo({caption}) {
   let [loading, setLoading] = useState(false)
   let [color, setColor] = useState("#94a3b8");
   function changeLoading(){
@@ -47,12 +47,12 @@ export default function FileUploadTool({caption}) {
                             htmlFor="file-upload"
                             className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                           >
-                            
-                            <input id="file-upload" name="file-upload" type="file"  onChange={async(e)=>{
+                          
+                            <input id="file-upload" name="file-upload"  type="file" onChange={async(e)=>{
                               
                               changeLoading()
                               const fileToolUploadResponse = await FileTool.upload(e.target.files[0])
-                           
+                             
                               if(fileToolUploadResponse !== "Something went wrong"){
                                 changeLoading()
                                 setLoading(false)

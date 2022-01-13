@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import DatePicker from "react-datepicker";
 import Nav from './nav'
+import uuid from 'react-uuid'
 import Pagination from './Pagination';
 import CheckOnlyCaption from './checkOnlyCaption';
 import "react-datepicker/dist/react-datepicker.css";
 import Button from './button';
 import Toggle from './Toggle';
 import FileUploadTool from './FileUploadTool';
+import Ftthree from './ftthree'
+import Fttwo from './fttwo'
 
 export default function Documents() {
 
@@ -94,7 +97,7 @@ export default function Documents() {
     )
   }
   const [startDate, setStartDate] = useState(new Date());
-
+  const requiredDocuments = ['Resume or CV', 'Application Letter', 'Application Fee rece']
     return (
         <div className="h-screen w-screen overflow-y-hidden">
 <Nav />
@@ -134,11 +137,11 @@ export default function Documents() {
     <div class="mt-0">
       <form action="#" method="POST">
         <div class="shadow overflow-hidden sm:rounded-md p-8">
-        <FileUploadTool caption="Resume or CV" />
+        <FileUploadTool caption="Resume or CV" key="resume-cv" />
         <div className="h-10"></div>
-        <FileUploadTool caption="Application Letter" />
+        <Ftthree caption="Application Letter" key="application-letter" />
         <div className="h-10"></div>
-        <FileUploadTool caption="Payment Receipt" />
+        <Fttwo caption="Payment Receipt" key="payment-receipt" />
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
               <Button text="Review and Submit" />

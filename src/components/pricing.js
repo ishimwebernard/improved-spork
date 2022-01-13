@@ -2,7 +2,6 @@ import React from 'react'
 import Button from './button'
 import Nav from './nav'
 import Footer from './footer'
-import HeroPricing from '../assets/heropricing.png'
 const Card = ({title, description, priceOnDemand, priceOnLine, inclusion}) =>{
     const Elements = [];
     inclusion.forEach((include)=>{
