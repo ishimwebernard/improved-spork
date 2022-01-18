@@ -56,7 +56,8 @@ export default function FileUploadTool({caption}) {
                               if(fileToolUploadResponse !== "Something went wrong"){
                                 changeLoading()
                                 setLoading(false)
-                                setFileUploaded(fileToolUploadResponse.name)
+                                localStorage.setItem('resumeorcv@primecs', fileToolUploadResponse)
+
                               }
                               
                             }} />

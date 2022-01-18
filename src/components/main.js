@@ -17,6 +17,7 @@ import Admindashboard from './admindashboard'
 import Applications from './applications'
 import ReviewApplication from './reviewappl'
 import Schedules from './schedules'
+import Review from './review'
 export default function Main() {
     return (
         <div className="">
@@ -36,7 +37,7 @@ export default function Main() {
         <Route path="/admindashboard/applications" exact component={Applications} />
         <Route path="/admindashboard/appreview" exact component={ReviewApplication} />
         <Route path="/admindashboard/schedules" exact component={Schedules} />
-
+        <Route path="/documents/review" exact component={Review} />
          </Switch>
             
         </div>

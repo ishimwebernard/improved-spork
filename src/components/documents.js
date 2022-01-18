@@ -85,7 +85,9 @@ export default function Documents() {
             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
            {components}
             </div>
-            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+            <div class="px-4 py-3 bg-gray-50 text-right sm:px-6" onClick={()=>{
+              localStorage.setItem('','')
+            }}>
               <Button text="Save" />
             </div>
           </div>
@@ -135,7 +137,7 @@ export default function Documents() {
 <div className="h-4/5 w-full overflow-y-scroll py-4 col-span-2">
 <div class="mt-10 sm:mt-0">
     <div class="mt-0">
-      <form action="#" method="POST">
+      <form action="documents/review" method="GET">
         <div class="shadow overflow-hidden sm:rounded-md p-8">
         <FileUploadTool caption="Resume or CV" key="resume-cv" />
         <div className="h-10"></div>

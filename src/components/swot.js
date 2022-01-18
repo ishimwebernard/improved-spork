@@ -10,11 +10,13 @@ import Toggle from './Toggle';
 
 export default function Swot() {
 
-  const TextWithLabel = ({labelText}) => {
+  const TextWithLabel = ({labelText, onChange}) => {
     return (
       <div class="col-span-6 sm:col-span-3">
       <label for="last-name" class="block text-sm font-medium text-gray-700">{labelText}</label>
-      <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+      <input onChange={(e)=>{
+        onChange(e.target.value)
+      }} type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
     </div>
     )
   }
@@ -135,14 +137,26 @@ export default function Swot() {
       <form action="#" method="POST">
         <div class="shadow overflow-hidden sm:rounded-md p-8">
         <p className="font-semibold text-gray-800">What 3 Areas do you excell in</p>
-        <TextWithLabel caption="Area 1" />
-        <TextWithLabel caption="Area 2" />
-        <TextWithLabel caption="Area 3" />
+        <TextWithLabel caption="Area 1" onChange={(value)=>{
+          localStorage.setItem('areaexcell1', value)
+        }} />
+        <TextWithLabel caption="Area 2" onChange={(value)=>{
+          localStorage.setItem('areaexcell2', value)
+        }} />
+        <TextWithLabel caption="Area 3" onChange={(value)=>{
+          localStorage.setItem('aeaexcell3', value)
+        }} />
         
         <p className="font-semibold text-gray-800 mt-10">What 3 Areas do you need to improve</p>
-        <TextWithLabel caption="Area 1" />
-        <TextWithLabel caption="Area 2" />
-        <TextWithLabel caption="Area 3" />
+        <TextWithLabel caption="Area 1" onChange={(value)=>{
+          localStorage.setItem('aeaimp1', value)
+        }} />
+        <TextWithLabel caption="Area 2" onChange={(value)=>{
+          localStorage.setItem('aeaimp2', value)
+        }}/>
+        <TextWithLabel caption="Area 3" onChange={(value)=>{
+          localStorage.setItem('aeaimp3', value)
+        }} />
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
               <Button text="Save" />

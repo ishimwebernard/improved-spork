@@ -56,8 +56,10 @@ export default function Ftthree() {
                               if(fileToolUploadResponse !== "Something went wrong"){
                                 changeloadingthree()
                                 setloadingthree(false)
-                                setfileUploadedthree(fileToolUploadResponse.name)
+                                localStorage.setItem('applicationletter@primecs', fileToolUploadResponse)
                               }
+                              changeloadingthree()
+                              
                               
                             }} />
                           </label>

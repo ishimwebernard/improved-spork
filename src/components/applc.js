@@ -137,17 +137,23 @@ export default function Applc() {
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <label for="first-name" class="block text-sm font-medium text-gray-700">First name</label>
-                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('firstName', e.target.value)
+                }} type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="last-name" class="block text-sm font-medium text-gray-700">Last name</label>
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('lasttName', e.target.value)
+                }} type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
 
               <div class="col-span-6 sm:col-span-4">
                 <label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label>
-                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('email', e.target.value)
+                }} type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
 
               <div class="col-span-6 sm:col-span-3">
@@ -160,28 +166,38 @@ export default function Applc() {
               </div>
               <div className="">
                 <p>Date of Birth</p>
-              <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+              <DatePicker selected={startDate} onChange={(date) => 
+                {
+                  localStorage.setItem('dateOfBirth', date)}} />
 
               </div>
 
               <div class="col-span-6">
                 <label for="street-address" class="block text-sm font-medium text-gray-700">Street address</label>
-                <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('streetAddress', e.target.value)
+                }} type="text" name="street-address" id="street-address" autocomplete="street-address" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
 
               <div class="col-span-6 sm:col-span-6 lg:col-span-2">
                 <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                <input type="text" name="city" id="city" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('city', e.target.value)
+                }} type="text" name="city" id="city" autocomplete="address-level2" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
 
               <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                 <label for="region" class="block text-sm font-medium text-gray-700">State / Province</label>
-                <input type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('stateorprovince', e.target.value)
+                }} type="text" name="region" id="region" autocomplete="address-level1" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
 
               <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                 <label for="postal-code" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                <input type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                <input onChange={(e)=>{
+                  localStorage.setItem('phoneNbr', e.target.value)
+                }} type="text" name="postal-code" id="postal-code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
               </div>
               <div className="w-full col-span-6">
               <p className="text-base font-medium text-gray-900">Areas Of Interest</p>

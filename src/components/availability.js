@@ -6,15 +6,24 @@ import CheckOnlyCaption from './checkOnlyCaption';
 import "react-datepicker/dist/react-datepicker.css";
 import Button from './button';
 import Toggle from './Toggle';
+import { Alert } from "react-bs-notifier";
+import { AlertList } from "react-bs-notifier";
+import ButterToast from 'butter-toast/dist/lean.min.js';
+
+
 
 
 export default function Availability() {
+let availFrom = '';
+let availTo = '';
 
-  const TextWithLabel = ({labelText}) => {
+  const TextWithLabel = ({labelText, onChange}) => {
     return (
       <div class="col-span-6 sm:col-span-3">
       <label for="last-name" class="block text-sm font-medium text-gray-700">{labelText}</label>
-      <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+      <input onChange={(e)=>{
+        onChange(e.target.value)
+      }} type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
     </div>
     )
   }
@@ -62,14 +71,23 @@ export default function Availability() {
         <div class="shadow overflow-hidden sm:rounded-md p-8">
         <div className="flex space-x-4">
         <div className="w-1/2">
-        <TextWithLabel labelText="Available From" />
+        <TextWithLabel labelText="Available From" onChange={(value)=>{
+          availFrom = value
+        }} />
         </div>
         <div className="w-1/2">
-        <TextWithLabel labelText="Available To" />
+        <TextWithLabel labelText="Available To" onChange={(value)=>{
+          availTo = value
+        }}  />
+        </div>=-
         </div>
-        </div>
+        
         <div className="h-20"></div>
-          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6" onClick={()=>{
+            localStorage.setItem('availFrom', availFrom)
+            localStorage.setItem('availTo', availTo)
+
+          }}>
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
               <Button text="Save" />
             </button>

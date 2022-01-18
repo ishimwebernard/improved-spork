@@ -10,11 +10,13 @@ import Toggle from './Toggle';
 
 export default function References() {
 
-  const TextWithLabel = ({labelText}) => {
+  const TextWithLabel = ({labelText, onChange}) => {
     return (
       <div class="col-span-6 sm:col-span-3">
       <label for="last-name" class="block text-sm font-medium text-gray-700">{labelText}</label>
-      <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+      <input onChange={(e)=>{
+        onChange(e.target.value)
+      }} type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
     </div>
     )
   }
@@ -61,15 +63,31 @@ export default function References() {
       <form action="#" method="POST">
         <div class="shadow overflow-hidden sm:rounded-md p-8">
             <p className="font-bold">Referal 1</p>
-            <TextWithLabel labelText="Company Name" />
-            <TextWithLabel labelText="Email" />
-            <TextWithLabel labelText="Phone" />
-            <TextWithLabel labelText="Relationship" />
+            <TextWithLabel labelText="Company Name" onChange={(al)=>{
+              localStorage.setItem('r1cn', al)
+            }} />
+            <TextWithLabel labelText="Email" onChange={(al)=>{
+              localStorage.setItem('r1em', al)
+            }}/>
+            <TextWithLabel labelText="Phone" onChange={(al)=>{
+              localStorage.setItem('r1pn', al)
+            }} />
+            <TextWithLabel labelText="Relationship" onChange={(al)=>{
+              localStorage.setItem('r1rs', al)
+            }} />
             <p className="font-bold">Referal 2</p>
-            <TextWithLabel labelText="Company Name" />
-            <TextWithLabel labelText="Email" />
-            <TextWithLabel labelText="Phone" />
-            <TextWithLabel labelText="Relationship" />
+            <TextWithLabel labelText="Company Name" onChange={(al)=>{
+              localStorage.setItem('r2cn', al)
+            }} />
+            <TextWithLabel labelText="Email" onChange={(al)=>{
+              localStorage.setItem('r2em', al)
+            }} />
+            <TextWithLabel labelText="Phone" onChange={(al)=>{
+              localStorage.setItem('r2pn', al)
+            }} />
+            <TextWithLabel labelText="Relationship" onChange={(al)=>{
+              localStorage.setItem('r2rs', al)
+            }}/>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
               <Button text="Save" />

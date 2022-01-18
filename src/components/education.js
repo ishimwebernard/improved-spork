@@ -9,17 +9,19 @@ import Toggle from './Toggle';
 
 
 export default function Education() {
-
-  const TextWithLabel = ({labelText}) => {
+  let highSchool, highSchoolAddress, highSchoolFrom, highSchoolTo, highFinish;
+  let uniSchool, uniSchoolAddress, uniSchoolFrom, uniSchoolTo, uniFinish;
+  const TextWithLabel = ({labelText, onChange}) => {
     return (
       <div class="col-span-6 sm:col-span-3">
       <label for="last-name" class="block text-sm font-medium text-gray-700">{labelText}</label>
-      <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+      <input onChange={(e)=>{
+        onChange(e.target.value)
+      }} type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
     </div>
     )
   }
  
-  const [startDate, setStartDate] = useState(new Date());
 
     return (
         <div className="h-screen w-screen overflow-y-hidden">
@@ -62,42 +64,73 @@ export default function Education() {
         <div class="shadow overflow-hidden sm:rounded-md p-8">
         <div className="flex space-x-4">
         <div className="w-1/2">
-        <TextWithLabel labelText="High School" />
+        <TextWithLabel labelText="High School" onChange={(value)=>{
+          highSchool = value
+          localStorage.setItem('highSchool',value)
+        }} />
         </div>
         <div className="w-1/2">
-        <TextWithLabel labelText="Address" />
+        <TextWithLabel labelText="Address" onChange={(value)=>{
+          highSchoolAddress = value
+          localStorage.setItem('highSchoolAddress',value)
+        }} />
         </div>
         </div>
         <div className="flex space-x-4">
         <div className="w-1/2">
-        <TextWithLabel labelText="From" />
+        <TextWithLabel labelText="From" onChange={(value)=>{
+          highSchoolFrom = value
+          localStorage.setItem('highSchoolFrom', value)
+        }} />
         </div>
         <div className="w-1/2">
-        <TextWithLabel labelText="To" />
+        <TextWithLabel labelText="To" onChange={(value)=>{
+          highSchoolTo = value
+          localStorage.setItem('highSchoolTo', value)
+          
+        }} />
         </div>
         </div>
         <div className="mt-4"></div>
-        <Toggle caption="I graduated from this institution" id="higrad" />
+        <Toggle caption="I graduated from this institution" id="higrad" onChange={(value)=>{
+            highFinish=value 
+           localStorage.setItem('highFinish', value)
+        }} />
         <div className="flex space-x-4">
         <div className="w-1/2">
-        <TextWithLabel labelText="University" />
+        <TextWithLabel labelText="University" onChange={(value)=>{
+          uniSchool = value
+          localStorage.setItem('uniSchool', value)
+        }}/>
         </div>
         <div className="w-1/2">
-        <TextWithLabel labelText="Address" />
+        <TextWithLabel labelText="Address" onChange={(value)=>{
+         uniSchoolAddress = value
+         localStorage.setItem('uniSchoolAddress', value)
+          
+        }} />
         </div>
         </div>
         <div className="flex space-x-4">
         <div className="w-1/2">
-        <TextWithLabel labelText="From" />
+        <TextWithLabel labelText="From" onChange={(value)=>{
+          uniSchoolFrom = value
+          localStorage.setItems('uniSchoolFrom', value)
+        }} />
         </div>
         <div className="w-1/2">
-        <TextWithLabel labelText="To" />
+        <TextWithLabel labelText="To" onChange={(value)=>{
+          uniSchoolTo = value
+          localStorage.setItem('uniSchoolTo', value)
+        }} />
         </div>
         </div>
         <div className="mt-4"></div>
         <Toggle caption="I graduated from this institution" id="unigrad" />
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
+            <button onClick={()=>{
+                alert(uniSchoolTo)
+            }}  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
               <Button text="Save" />
             </button>
           </div>

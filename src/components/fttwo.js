@@ -56,7 +56,8 @@ export default function Fttwo({caption}) {
                               if(fileToolUploadResponse !== "Something went wrong"){
                                 changeLoading()
                                 setLoading(false)
-                                setFileUploaded(fileToolUploadResponse.name)
+                                localStorage.setItem('paymentreceipt@primecs', fileToolUploadResponse)
+
                               }
                               
                             }} />
