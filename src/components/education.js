@@ -114,26 +114,23 @@ export default function Education() {
         <div className="flex space-x-4">
         <div className="w-1/2">
         <TextWithLabel labelText="From" onChange={(value)=>{
-          uniSchoolFrom = value
-          localStorage.setItems('uniSchoolFrom', value)
+         
+          localStorage.setItem('uniSchoolFrom', value)
         }} />
         </div>
         <div className="w-1/2">
         <TextWithLabel labelText="To" onChange={(value)=>{
-          uniSchoolTo = value
+      
           localStorage.setItem('uniSchoolTo', value)
         }} />
         </div>
         </div>
         <div className="mt-4"></div>
-        <Toggle caption="I graduated from this institution" id="unigrad" />
-          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button onClick={()=>{
-                alert(uniSchoolTo)
-            }}  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
-              <Button text="Save" />
-            </button>
-          </div>
+        <Toggle caption="I graduated from this institution" id="unigrad"  onChange={(value)=>{
+         
+           localStorage.setItem('uniFinish', value)
+        }}/>
+          
         </div>
       </form>
     </div>

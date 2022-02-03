@@ -1,33 +1,79 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
+import axios from 'axios'
 import AdNav from './adNav'
 import Toggle from './Toggle'
 import {Link} from 'react-router-dom'
-
+import dotenv from 'dotenv'
+dotenv.config()
 const TableRecord = ({fName, email, aoi, dateAppl}) => {
     return (
-             <tr class="bg-white border-b">
+         
+             <tr className="bg-white border-b w-full">
 
-               <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                {fName}
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
-                                {email}
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
-                                {aoi}
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
-                                {dateAppl}
-                            </td>
-                         
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
-                                <Link to="/admindashboard/appreview" class="text-blue-600 hover:text-blue-900">Review</Link>
-                            </td>
-                            </tr>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                 {fName}
+             </td>
+             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
+                 {email}
+             </td>
+             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
+                 {aoi}
+             </td>
+             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap">
+                 {dateAppl}
+             </td>
+           
+          
+             </tr>
+           
      
     )
 }
 export default function Applications() {
+ 
+  
+
+    const WrapApplicantGraphics = () => {
+        const [data, setWaitingForAdmission] = useState([])
+
+        useEffect(()=>{
+            const fetchData = async() =>{
+                const applicants = await axios({
+                    'method': 'get',
+                    'url': 'https://rich-guy-rambo.herokuapp.com/applicants/forAdmission',
+        
+                })
+                setWaitingForAdmission(applicants.data)
+                //console.log(data)
+                return applicants
+            }
+            fetchData()
+            //alert('Finished')
+        })
+    let retval = [];
+      try{
+         console.log(data.length)
+         for(let i=0; i<data.length;i++){
+            retval.push(
+                <TableRecord fName={data[i].firstName} email={data[i].user_Email} aoi="Eng, Cons," dateAppl={data[i].dateSent}  />
+    
+            )
+          }
+    
+      }catch(e){
+            console.log(e)
+      }
+
+    
+   return (
+       <>
+           {retval}
+       </>
+   )
+   }
+    
+
+    
     return (
         <div>
             <div className="h-screen grid grid-cols-4">
@@ -38,7 +84,6 @@ export default function Applications() {
             <div className="col-span-3 bg-gray-50 h-screen overflow-y-croll overflow-x-hidden">
                 <div className="p-6 bg-white">
                 <p className="font-bold text-4xl text-gray-600">Active Applications</p>
-                <Toggle caption="Show Admitted Applicants" id="admission" />
                 </div>
                 
 
@@ -46,7 +91,7 @@ export default function Applications() {
    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
             <div class="overflow-hidden sm:rounded-lg shadow-md">
-                <table class="min-w-full">
+                <table class="min-w-full ">
                     <thead class="bg-gray-50">
                         <tr>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider">
@@ -62,17 +107,16 @@ export default function Applications() {
                                 Date Applied
                             </th>
                          
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider">
-                                Action
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                         <TableRecord fName="Murara Prince" email="mura@ymail.com" aoi="Eng, Cons," dateAppl="1/1/2001"  />
-                         <TableRecord fName="Murara Prince" email="mura@ymail.com" aoi="Eng, Cons," dateAppl="1/1/2001"  />
-                       
-                    </tbody>
+
+<WrapApplicantGraphics />
+</tbody>
+ 
                 </table>
+ 
+
             </div>
         </div>
     </div>

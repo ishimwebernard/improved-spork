@@ -88,11 +88,7 @@ export default function References() {
             <TextWithLabel labelText="Relationship" onChange={(al)=>{
               localStorage.setItem('r2rs', al)
             }}/>
-          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
-              <Button text="Save" />
-            </button>
-          </div>
+         
         </div>
       </form>
     </div>

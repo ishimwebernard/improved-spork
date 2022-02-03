@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from './button'
+import axios from 'axios'
 import AdNav from './adNav'
+
 const Card = ({caption, description, svg}) => {
  return (
 <div className="rounded-lg bg-white ">
@@ -24,6 +26,7 @@ const Card = ({caption, description, svg}) => {
 
 
 export default function Admindashboard() {
+   
     return (
         <div className="h-screen grid grid-cols-4">
             <div className="col-span-1 h-full blue-gradient">
