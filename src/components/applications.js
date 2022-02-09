@@ -47,7 +47,7 @@ export default function Applications() {
                 const applicants = await axios({
                     'method': 'get',
                    ' headers': { 'Content-Type': 'application/json'},
-                    'url': 'https://rich-guy-rambo.herokuapp.com/applicants/forAdmission',
+                    'url': 'http://localhost:5000/applicants/forAdmission',
         
                 })
                 setWaitingForAdmission(applicants.data)

@@ -57,7 +57,7 @@ export default function ReviewApplication() {
                     console.log(name)
                     const admissionResponse = await axios({
                         method: 'post',
-                        url: 'https://rich-guy-rambo.herokuapp.com/application/admitapplicant',
+                        url: 'http://localhost:5000/application/admitapplicant',
                         data: {'user_Email': dataPased.user_Email, 'userFullName': name}
                     });
                     setActionTaken('admitted')
@@ -69,7 +69,7 @@ export default function ReviewApplication() {
   <button onClick={async()=>{
       const rejectionResponse = await axios({
                         method: 'post',
-                        url: 'http://localhost:5000/application/rejectapplicant',
+                        url: 'https://rich-guy-rambo.herokuapp.com/application/rejectapplicant',
                         data: {'user_Email': dataPased.user_Email}
                     });
                     setActionTaken('rejected')

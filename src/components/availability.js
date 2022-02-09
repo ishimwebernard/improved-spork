@@ -72,14 +72,16 @@ let availTo = '';
         <div className="flex space-x-4">
         <div className="w-1/2">
         <TextWithLabel labelText="Available From" onChange={(value)=>{
-          availFrom = value
+                      localStorage.setItem('availFrom', value)
+
         }} />
         </div>
         <div className="w-1/2">
         <TextWithLabel labelText="Available To" onChange={(value)=>{
-          availTo = value
+                      localStorage.setItem('availTo', value)
+
         }}  />
-        </div>=-
+        </div>
         </div>
         
         <div className="h-20"></div>
