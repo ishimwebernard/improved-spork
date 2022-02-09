@@ -1,17 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react'
-import WebViewer from '@pdftron/webviewer'
-
+import axios from 'axios'
+import Button from './button'
+import Footer from './footer'
 import Nav from './nav'
+import generateApplicantData from './generateApplicantData'
+
+
+// eslint-disable-next-line no-restricted-globals
+
+
+
+function RedirectError(){
+  return (
+     <button onClick={()=>{
+      // eslint-disable-next-line no-restricted-globals
+             window.location.href = "/membership"
+             }} type="button" class="text-white w-full bg-red-600 hover:bg-red-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">Correct errors</button>)
+}
+
+
 export default function Review() {
-  const viewerDiv = useRef<HTMLDivElement>(null)
-  useEffect(()=>{
-   
-     WebViewer({path: 'lib', initialDoc: localStorage.getItem('resumeorcv@primecs')}, 
-      viewerDiv.current as HTMLDivElement).then(instance => {})
-
-
-
-  }, [])
+    const [sending, setSending] = useState(false)
+    const [error, setError] = useState(false)
+    const [responseTime, setResponseTime] = useState(false)
+    const [errorType, setErrorType] = useState("Failed to submit application, check your internet connectivity")
+    function redirect(){
+       window.location.href = "/"
+    }
     const DisabledCheck = ({value, caption}) => {
       return (
           <div>
@@ -34,8 +49,69 @@ export default function Review() {
     )
   }
     return (
-        <div className="w-full px-20 space-y-5">
+        <div className="w-full  ">
+        <div className={responseTime ? "fixed w-full z-40 bg-transparent flex justify-end ":"hidden"}>
+          <div className={error ? "flex justify-evenly rounded-xl px-4 py-8 w-1/3 bg-red-200":"flex justify-evenly rounded-xl px-4 py-8 w-1/3 bg-white"}>
+              <div className="w-1/3 ">
+              <p className="text-2xl">{error? "Error":"Success"}</p>
+ {
+  error ? (
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="#dc2626">
+  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+</svg>
+
+    ):(
+                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+</svg>)
+ }
+              </div>
+              <div className="ml-3">
+                <p>{error ? errorType:"Your application has been sent succesfully and you can expect to hear from us soon."}</p>
+                <div className="mt-3">
+                  <div className={error? "hidden":""}>
+                    <div onClick={()=>{
+                      window.location.href = "/"
+                    }}>
+                      <Button text="Okay" />
+                    </div>
+                  </div>
+                  {
+                    error? (
+                        <RedirectError />
+
+                      ):(
+                        <></>
+                      )
+                  }
+                </div>
+              </div>
+        
+          </div>
+        </div>
+            <div className={sending ? "bg-gray-700 bg-opacity-60 grid place-items-center fixed w-screen h-screen z-20":"hidden"}>
+              <div className="grid place-items-center">
+                  <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(1 1)" stroke-width="2">
+            <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+            <path d="M36 18c0-9.94-8.06-18-18-18">
+                <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 18 18"
+                    to="360 18 18"
+                    dur="1s"
+                    repeatCount="indefinite"/>
+            </path>
+        </g>
+    </g>
+</svg>
+<p className="text-white">Sending Application</p>
+              </div>
+            </div>
             <Nav />
+            <div className="px-20 space-y-5">
             <div className="flex w-full space-x-2">
            <div className="w-1/2">
            <TextWithLabel  labelText="First Name" value={localStorage.getItem('firstName')}/>
@@ -178,7 +254,7 @@ export default function Review() {
               <div className="flex w-full space-x-2">
            <div className="w-1/3">
            <TextWithLabel  labelText="Resume " value={localStorage.getItem('resumeorcv@primecs')}/>
-          <div ref={viewerDiv}></div>
+      
                </div>
          <div className="w-1/3">
          <TextWithLabel  labelText="Application Letter" value={localStorage.getItem('applicationletter@primecs')}/>
@@ -186,10 +262,46 @@ export default function Review() {
              <div className="w-1/3">
          <TextWithLabel  labelText="Referal 2 Relationship" value={localStorage.getItem('paymentreceipt@primecs')}/>
              </div>
+
+            </div>
+            <div className="grid place-items-center">
+            <div className="flex space-x-4">
+               <Button text="Go back " />
+             <div onClick={async()=>{
+                setSending(true)
+                console.log(generateApplicantData())
+                try{
+                    const submitApplication = await axios(
+                {
+                  method: 'post',
+                  headers: { 'Content-Type': 'application/json'},
+                  url: 'https://rich-guy-rambo.herokuapp.com//application/sendapplication',
+                  data: generateApplicantData()
+                });
+                    console.log(submitApplication)
+                    setResponseTime(true)
+                    setError(false)
+                      setSending(false)
+                }catch(e){
+                  console.log(e)
+                  setResponseTime(true)
+                  setError(true)
+                   setSending(false)
+                  setErrorType('Something went wrong')
+                
+                }
+               // console.log(submitApplication)
+
+
+             }}>
+             <Button text="Submit" />
+             </div>
+            </div>
             </div>
 
 
-
+            </div>
+            <Footer />
 
         </div>
     )

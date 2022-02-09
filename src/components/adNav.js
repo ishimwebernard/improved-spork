@@ -24,6 +24,8 @@ export default function AdNav() {
              <NavElement caption="Home" route="/admindashboard" />
                 <NavElement caption="Applications" route="/admindashboard/applications" />
                 <NavElement caption="Create Schedules" route="/admindashboard/schedules" />
+                <NavElement caption="Active Users" route="/admindashboard/activeusers" />
+
         </div>
     )
 }

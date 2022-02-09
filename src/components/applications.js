@@ -5,10 +5,15 @@ import Toggle from './Toggle'
 import {Link} from 'react-router-dom'
 import dotenv from 'dotenv'
 dotenv.config()
-const TableRecord = ({fName, email, aoi, dateAppl}) => {
+const TableRecord = ({fName, email, aoi, dateAppl, dataObj}) => {
     return (
          
-             <tr className="bg-white border-b w-full">
+             <tr className="bg-white border-b w-full hover:bg-gray-200 cursor-pointer" onClick={()=>{
+               
+                localStorage.setItem('fullinfo@primecs',JSON.stringify(dataObj));
+                window.location.href = '/admindashboard/appreview'
+             
+             }}>
 
 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                  {fName}
@@ -35,16 +40,20 @@ export default function Applications() {
 
     const WrapApplicantGraphics = () => {
         const [data, setWaitingForAdmission] = useState([])
+        const [loading, setLoading] = useState(true)
 
         useEffect(()=>{
             const fetchData = async() =>{
                 const applicants = await axios({
                     'method': 'get',
+                   ' headers': { 'Content-Type': 'application/json'},
                     'url': 'https://rich-guy-rambo.herokuapp.com/applicants/forAdmission',
         
                 })
                 setWaitingForAdmission(applicants.data)
                 //console.log(data)
+                setLoading(false)
+
                 return applicants
             }
             fetchData()
@@ -55,9 +64,8 @@ export default function Applications() {
          console.log(data.length)
          for(let i=0; i<data.length;i++){
             retval.push(
-                <TableRecord fName={data[i].firstName} email={data[i].user_Email} aoi="Eng, Cons," dateAppl={data[i].dateSent}  />
-    
-            )
+<TableRecord dataObj={data[i]} fName={data[i].firstName} email={data[i].user_Email} aoi="Eng, Cons," dateAppl={data[i].dateSent}  />
+             )
           }
     
       }catch(e){
@@ -67,7 +75,22 @@ export default function Applications() {
     
    return (
        <>
-           {retval}
+           {loading ? (<svg width="100" height="100" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#000">
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(1 1)" stroke-width="2">
+            <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+            <path d="M36 18c0-9.94-8.06-18-18-18">
+                <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 18 18"
+                    to="360 18 18"
+                    dur="1s"
+                    repeatCount="indefinite"/>
+            </path>
+        </g>
+    </g>
+</svg>): retval}
        </>
    )
    }
@@ -112,6 +135,7 @@ export default function Applications() {
                     <tbody>
 
 <WrapApplicantGraphics />
+
 </tbody>
  
                 </table>

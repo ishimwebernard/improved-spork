@@ -19,6 +19,7 @@ import ReviewApplication from './reviewappl'
 import Schedules from './schedules'
 import Review from './review'
 import ScheduleOpener from './scheduleOpener'
+import Active from './active'
 export default function Main() {
     return (
         <div className="">
@@ -40,6 +41,8 @@ export default function Main() {
         <Route path="/admindashboard/schedules" exact component={Schedules} />
         <Route path="/admindashboard/openschedule" exact component={ScheduleOpener} />
         <Route path="/documents/review" exact component={Review} />
+        <Route path="/admindashboard/activeusers" exact component={Active} />
+
          </Switch>
             
         </div>
