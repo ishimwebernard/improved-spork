@@ -57,7 +57,7 @@ export default function ReviewApplication() {
                     console.log(name)
                     const admissionResponse = await axios({
                         method: 'post',
-                        url: 'https://rich-guy-rambo.herokuapp.com//application/admitapplicant',
+                        url: 'https://rich-guy-rambo.herokuapp.com/application/admitapplicant',
                         data: {'user_Email': dataPased.user_Email, 'userFullName': name}
                     });
                     setActionTaken('admitted')

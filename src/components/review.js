@@ -275,7 +275,7 @@ export default function Review() {
                 {
                   method: 'post',
                   headers: { 'Content-Type': 'application/json'},
-                  url: 'https://rich-guy-rambo.herokuapp.com//application/sendapplication',
+                  url: 'https://rich-guy-rambo.herokuapp.com/application/sendapplication',
                   data: generateApplicantData()
                 });
                     console.log(submitApplication)
